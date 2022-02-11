@@ -15,8 +15,7 @@ namespace ApplicationSecurityAssignment
 {
     public partial class RegistrationForm : System.Web.UI.Page
     {
-        string MYDBConnectionString =
-        System.Configuration.ConfigurationManager.ConnectionStrings["MYDBConnection"].ConnectionString;
+        string MYDBConnectionString =System.Configuration.ConfigurationManager.ConnectionStrings["MYDBConnection"].ConnectionString;
         static string finalHash;
         static string salt;
         byte[] Key;
@@ -63,8 +62,20 @@ namespace ApplicationSecurityAssignment
 
             return score;
         }
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btn_Submit_Click(object sender, EventArgs e)
         {
+            
+            
+            //if (txtVerificationCode.Text.ToLower()==Session["CaptchaVerify"].ToString())
+            //{
+            //    Response.Redirect("Success.aspx",false);
+            //}
+            //else
+            //{
+            //    lblCaptchaMessage.Text = "You have entered wrong Captcha. Please enter correct Captcha";
+            //    lblCaptchaMessage.ForeColor = System.Drawing.Color.Red;
+            //}
+
             int scores = checkPassword(tb_password.Text);
             string status = "";
             switch (scores)
@@ -114,6 +125,7 @@ namespace ApplicationSecurityAssignment
             cipher.GenerateKey();
             Key = cipher.Key;
             IV = cipher.IV;
+            
           
         }
         protected void createAccount()
@@ -170,7 +182,7 @@ namespace ApplicationSecurityAssignment
             }
         }
 
-        protected byte[] encryptData(string data)
+        protected byte[] encryptData(string Data)
         {
             byte[] cipherText = null;
             try
@@ -180,7 +192,7 @@ namespace ApplicationSecurityAssignment
                 cipher.Key = Key;
                 ICryptoTransform encryptTransform = cipher.CreateEncryptor();
                 //ICryptoTransform decryptTransform = cipher.CreateDecryptor();
-                byte[] plainText = Encoding.UTF8.GetBytes(data);
+                byte[] plainText = Encoding.UTF8.GetBytes(Data);
                 cipherText = encryptTransform.TransformFinalBlock(plainText, 0, plainText.Length);
 
 
@@ -198,5 +210,7 @@ namespace ApplicationSecurityAssignment
             finally { }
             return cipherText;
         }
+
+        
     }
 }

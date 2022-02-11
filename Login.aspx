@@ -15,23 +15,24 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Username:
-            <asp:TextBox ID="tb_userid" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tb_username" runat="server"></asp:TextBox>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Password:&nbsp;
-            <asp:TextBox ID="tb_pwd" runat="server" style="margin-left: 0px" Width="293px"></asp:TextBox>
+            <asp:TextBox ID="tb_pwd" runat="server" ></asp:TextBox>
         </div>
         <p>
             &nbsp;</p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        
-        <asp:Button ID="btnSubmit" runat="server" Text="Login" />
+        <asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" Text="Login" />
        
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;
         <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
+        <div class="g-recaptcha" data-sitekey="6LdG-FseAAAAAB-rBrYLer9CGHEHbHxsVPKHkon7"</div>
         <asp:Label ID="lblMessage" runat="server" EnableViewState="false">Error message here (lblMessage)"></asp:Label>
     </form>
     <script>

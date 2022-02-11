@@ -70,14 +70,15 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:TextBox ID="tb_CardNumber" runat="server" Width="730px"></asp:TextBox>
         </p>
         <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Expiration Date(DD/MM/YY):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Postal Code:</p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Expiration Date(DD/MM/YY):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
         <p>
             <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:TextBox ID="tb_expdate" runat="server" Width="730px"></asp:TextBox>
         </p>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:TextBox ID="TextBox4" runat="server" Width="247px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="tb_PostalCode" runat="server" Width="247px"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Postal Code:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;
+            <br />
+            <asp:TextBox ID="tb_PostalCode" runat="server" Width="718px"  style="margin-left: 63px" ></asp:TextBox>
         </p>
         <p>
             Email address:<asp:TextBox ID="tb_email" runat="server" Width="311px"></asp:TextBox>
@@ -94,8 +95,16 @@
             Date Of birth:<asp:TextBox ID="tb_birthdate" runat="server" Width="311px"></asp:TextBox>
         </p>
             <p>
+                Verification Code:<asp:Image ID="Image2" runat="server" Height="115px" Image="" Width="220px" style="margin-right: 0px" />
+                                  <asp:Label runat="server" ID="lblCaptchaMessage"></asp:Label>
+        </p>
+            <p>
+                Enter Verification Code: <asp:TextBox ID="txtVerificationCode" runat="server"></asp:TextBox>
+        </p>
+            <p>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" Height="73px" style="margin-left: 140px" Width="366px" />
+                <asp:Button ID="btn_Submit" runat="server" 
+                    onClick="btn_Submit_Click" Text="Submit"  />
         </p>
             <p>
                 <asp:Label ID="lb_error1" runat="server"></asp:Label>
